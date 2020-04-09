@@ -310,7 +310,8 @@ class VioInterface {
    *        should return immediately (blocking=false), or only when the processing is complete.
    */
   virtual void setBlocking(bool blocking);
-
+  virtual bool isReset();
+  virtual void setReset(bool reset);
   /// \}
 
  protected:
@@ -336,6 +337,7 @@ class VioInterface {
   typedef std::map<size_t, std::shared_ptr<std::fstream>> FilePtrMap;
   FilePtrMap csvTracksFiles_; ///< Tracks CSV Files.
   bool blocking_; ///< Blocking option. Whether the addMeasurement() functions should wait until proccessing is complete.
+  bool featurereset;
 };
 
 }  // namespace okvis
