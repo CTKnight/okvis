@@ -114,8 +114,8 @@ void VioParametersReader::readConfigFile(const std::string& filename) {
         >> vioParameters_.optimization.durationResetThreshold;
   } else {
     LOG(WARNING)
-        << "slam resetting: durationResetThreshold not provided. Setting to default: 2.";
-    vioParameters_.optimization.durationResetThreshold = 2.0;
+        << "slam resetting: durationResetThreshold not provided. Setting to default: 0.05";
+    vioParameters_.optimization.durationResetThreshold = 0.05;
   }
   // minimum ceres iterations
   if (file["ceres_options"]["minIterations"].isInt()) {
